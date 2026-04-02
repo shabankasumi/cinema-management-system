@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef4444;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+/* Global styles */
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Custom button animations */
+.btn-hover {
+  @apply transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg;
+}
+
+/* Movie card hover effects */
+.movie-card {
+  @apply transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl;
+}
+
+/* Gradient backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #7f1d1d 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, #374151 0%, #1f2937 100%);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #374151;
+  border-top: 3px solid #ef4444;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive text */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+}
